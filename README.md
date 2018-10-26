@@ -13,7 +13,7 @@ In Metalsmith, all of the logic is handled by plugins. You simply chain them tog
 ```js
 Metalsmith(__dirname)
   .use(markdown())
-  .use(layouts('handlebars'))
+  .use(layouts({engine: 'handlebars'}))
   .build(function(err) {
     if (err) throw err;
     console.log('Build finished!');
@@ -27,7 +27,7 @@ Metalsmith(__dirname)
   .use(drafts())
   .use(markdown())
   .use(permalinks('posts/:title'))
-  .use(layouts('handlebars'))
+  .use(layouts({engine: 'handlebars'}))
   .build(function(err) {
     if (err) throw err;
     console.log('Build finished!');
